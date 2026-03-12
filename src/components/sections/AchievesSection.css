@@ -1,8 +1,8 @@
 .achieves-section {
-          position: relative;
-          padding: 60px 0;
-          overflow: hidden;
-        }
+  position: relative;
+  padding: 24px 0 60px;
+  overflow: hidden;
+}
         .achieves__bg {
           position: absolute;
           inset: 0;

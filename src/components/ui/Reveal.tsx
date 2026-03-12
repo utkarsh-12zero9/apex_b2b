@@ -6,7 +6,7 @@ interface RevealProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
 }
 
 export default function Reveal({
@@ -36,7 +36,6 @@ export default function Reveal({
   }, [delay]);
 
   return (
-    // @ts-expect-error – polymorphic ref
     <Tag ref={ref} className={`reveal ${className}`}>
       {children}
     </Tag>

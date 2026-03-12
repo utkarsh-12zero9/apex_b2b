@@ -1,6 +1,6 @@
 .program-section {
-          padding: 60px 0;
-        }
+  padding: 24px 0 60px;
+}
         .program__layout {
           display: grid;
           grid-template-columns: 1fr 1fr;

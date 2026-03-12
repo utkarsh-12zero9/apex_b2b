@@ -95,13 +95,6 @@ export default function HeroSection() {
           </div>
         </Reveal>
       </div>
-
-      {/* <div className="hero__scroll-hint" aria-hidden="true">
-        <div className="hero__scroll-line" />
-        <span>Scroll to explore</span>
-      </div> */}
-
-
     </section>
   );
 }

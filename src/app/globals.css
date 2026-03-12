@@ -161,14 +161,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--muted-lighter);
-  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--muted);
 }
 
 .btn-secondary:hover {
   background: var(--surface);
-  border-color: rgba(255,255,255,0.15);
+  border-color: var(--foreground);
   color: var(--foreground);
   transform: translateY(-2px);
 }
