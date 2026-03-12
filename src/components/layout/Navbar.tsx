@@ -1,0 +1,91 @@
+"use client";
+import "./Navbar.css";
+
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+
+const navLinks = [
+  { label: "Program", href: "#program" },
+  { label: "Curriculum", href: "#systems" },
+  { label: "Outcomes", href: "#outcomes" },
+  { label: "Why Apex", href: "#why-apex" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <nav
+      className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div className="navbar__inner container">
+        {/* Logo */}
+        <Link href="#home" className="navbar__logo">
+          <span className="navbar__logo-icon" aria-hidden="true">▲</span>
+          <span className="navbar__logo-text">Apex</span>
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="navbar__links" role="list">
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} className="navbar__link">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <a href="#consultation" className="navbar__cta btn btn-primary">
+          Book a Consultation
+        </a>
+
+        {/* Hamburger */}
+        <button
+          className={`navbar__hamburger ${menuOpen ? "open" : ""}`}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`navbar__mobile ${menuOpen ? "navbar__mobile--open" : ""}`}>
+        {navLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="navbar__mobile-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="#consultation"
+          className="btn btn-primary"
+          onClick={() => setMenuOpen(false)}
+        >
+          Book a Consultation
+        </a>
+      </div>
+
+      
+    </nav>
+  );
+}

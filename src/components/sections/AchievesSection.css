@@ -1,0 +1,90 @@
+.achieves-section {
+          position: relative;
+          padding: 60px 0;
+          overflow: hidden;
+        }
+        .achieves__bg {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(ellipse 70% 60% at 20% 50%, rgba(99,102,241,0.07), transparent);
+          pointer-events: none;
+        }
+        .achieves__layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+        }
+        .achieves__left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 24px;
+        }
+        .achieves__heading {
+          font-size: clamp(1.8rem, 3vw, 2.6rem);
+          line-height: 1.15;
+        }
+        .achieves__sub {
+          font-size: 0.95rem;
+          color: #334155;
+          line-height: 1.8;
+        }
+        .achieves__sub strong {
+          color: #475569;
+        }
+        .achieves__cta {
+          margin-top: 8px;
+        }
+        .achieves__right {
+          display: flex;
+          align-items: center;
+        }
+        .achieves__list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+          background: rgba(0,0,0,);
+          border: 1px solid rgba(0,0,0,);
+          border-radius: 20px;
+          overflow: hidden;
+        }
+        .achieves__item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 20px 28px;
+          font-size: 0.95rem;
+          color: #475569;
+          border-bottom: 1px solid rgba(0,0,0,);
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+        .achieves__item:last-child {
+          border-bottom: none;
+        }
+        .achieves__item:hover {
+          background: rgba(99,102,241,0.05);
+          color: #1e293b;
+        }
+        .achieves__check {
+          flex-shrink: 0;
+          width: 28px;
+          height: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(99,102,241,0.15);
+          border: 1px solid rgba(99,102,241,0.25);
+          border-radius: 8px;
+          color: #4f46e5;
+        }
+        @media (max-width: 768px) {
+          .achieves__layout {
+            grid-template-columns: 1fr;
+            gap: 48px;
+          }
+        }
