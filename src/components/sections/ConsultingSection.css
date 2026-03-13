@@ -74,7 +74,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: #334155;
-  background: rgba(216, 213, 245, 0.493);
+  background: #dcd9f862;
   border: 1px solid rgba(99, 102, 241, 0.15);
   border-radius: 100px;
   padding: 14px 28px;
@@ -87,7 +87,7 @@
 .consulting__item:hover {
   transform: translateY(-3px);
   border-color: rgba(99, 102, 241, 0.4);
-  background: white;
+  background: #d8d5f5a9;
   box-shadow: 0 12px 20px -5px rgba(99, 102, 241, 0.15);
 }
 
