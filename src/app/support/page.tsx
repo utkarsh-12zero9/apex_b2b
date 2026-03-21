@@ -1,4 +1,4 @@
-import Support from '@/Pages/Support';
+import Support from '@/page-components/Support';
 
 export const metadata = {
   title: 'Support | Apex School of Business',

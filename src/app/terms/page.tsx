@@ -1,4 +1,4 @@
-import Terms from '@/Pages/Terms';
+import Terms from '@/page-components/Terms';
 
 export const metadata = {
   title: 'Terms of Use | Apex School of Business',

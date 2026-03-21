@@ -1,4 +1,4 @@
-import Refund from '@/Pages/Refund';
+import Refund from '@/page-components/Refund';
 
 export const metadata = {
   title: 'Refund Policy | Apex School of Business',
