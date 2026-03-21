@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="footer__cta-text">
               Ready to launch your career in the AI driven business world?
             </p>
-            <Link href="/#consultation" className="footer__cta-btn">
+            <Link href="https://courses.apexschoolofbusiness.com/t/p/checkout/V4/course/69b4e7024a302be139825d6c/p1?callback_url=/courses/69b4e7024a302be139825d6c" className="footer__cta-btn">
               Enroll Now <span className="arrow">↗</span>
             </Link>
           </div>
