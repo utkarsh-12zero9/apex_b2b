@@ -2,7 +2,6 @@
 
 import "./AchievesSection.css";
 import Reveal from "@/components/ui/Reveal";
-import { useLeadForm } from "@/context/LeadFormContext";
 
 const achievements = [
     "AI powered prospecting and lead generation system",
@@ -19,7 +18,6 @@ const CheckIcon = () => (
 );
 
 export default function AchievesSection() {
-    const { openLeadForm } = useLeadForm();
     return (
         <section className="achieves-section" id="achieves">
             <div className="achieves__bg" aria-hidden="true" />
@@ -35,8 +33,10 @@ export default function AchievesSection() {
                             Your team does not just learn about sales systems.{" "}
                             <strong>They build one for your company.</strong>
                         </p>
-                        <button
-                            onClick={openLeadForm}
+                        <a
+                            href="/preview-form"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="btn btn-primary achieves__cta"
                         >
                             <span>Get Exclusive Preview</span>
@@ -51,7 +51,7 @@ export default function AchievesSection() {
                             >
                                 <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>
-                        </button>
+                        </a>
                     </Reveal>
 
                     <Reveal className="achieves__right" delay={150}>

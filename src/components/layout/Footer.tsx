@@ -2,7 +2,6 @@
 
 import "./Footer.css";
 import Link from "next/link";
-import { useLeadForm } from "@/context/LeadFormContext";
 
 const footerLinks = [
   { label: "Key Outcomes", href: "/#outcomes" },
@@ -13,7 +12,6 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const { openLeadForm } = useLeadForm();
   return (
     <footer className="footer">
       <div className="container">
@@ -60,9 +58,9 @@ export default function Footer() {
             <p className="footer__cta-text">
               Ready to launch your career in the AI driven business world?
             </p>
-            <button onClick={openLeadForm} className="footer__cta-btn">
+            <Link href="/preview-form" target="_blank" rel="noopener noreferrer" className="footer__cta-btn">
               Access Free Preview <span className="arrow">↗</span>
-            </button>
+            </Link>
           </div>
 
           {/* Contact Column */}

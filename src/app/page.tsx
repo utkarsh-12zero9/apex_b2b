@@ -15,12 +15,10 @@ import Faculty from "@/components/sections/Faculty";
 import FAQSection from "@/components/sections/FAQSection";
 import TrustedBySection from "@/components/sections/TrustedBySection";
 import ToolsMarquee from "@/components/sections/ToolsMarquee";
-import { LeadFormProvider } from "@/context/LeadFormContext";
-import LeadFormModal from "@/components/ui/LeadFormModal";
 
 export default function HomePage() {
   return (
-    <LeadFormProvider>
+    <>
       <Navbar />
       <main>
         <HeroSection />
@@ -40,8 +38,7 @@ export default function HomePage() {
         <FinalCTASection />
       </main>
       <Footer />
-      <LeadFormModal />
-    </LeadFormProvider>
+    </>
   );
 }
 
