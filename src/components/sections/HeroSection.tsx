@@ -60,7 +60,7 @@ export default function HeroSection() {
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
-              <a href="https://apexschoolofbusiness.com/" className="btn btn-secondary">
+              <a href="https://calendly.com/business-theapexschoolofbusiness/30min" className="btn btn-secondary">
                 <span>Book a Call</span>
               </a>
             </div>
@@ -70,7 +70,7 @@ export default function HeroSection() {
 
         <div className="hero__right">
           <Reveal delay={300} className="hero__video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wfnEeIQCQCw?si=72zA9gMQ-Codd1yC" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/zGA0Wy0Ro34?si=H79znfLdD4CCjSzr" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
           </Reveal>
         </div>
       </div >

@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import "./PreviewForm.css";
-import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const CHECKOUT_URL =
   "https://courses.apexschoolofbusiness.com/s/preview/courses/AI-Powered-Sales-System-Training-for-B2B-69bf9eb18d8b3db3693ecb84#69b4ee21dec50bb1d4f08d2b";
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxA-jqWPrqJV61B4VHTsL2PvuG1SLDagUiUszoVkwAO60wIagSQD5MYMpuFnt9241u8/exec";
 
 interface FormData {
   fullName: string;
@@ -33,32 +35,28 @@ export default function PreviewFormPage() {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
-      const response = await fetch("/api/submit-lead", {
+      await fetch(SCRIPT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+        mode: "no-cors",
+        body: new URLSearchParams(form as any),
       });
+      window.location.href = CHECKOUT_URL;
 
-      if (response.ok) {
-        // Navigate to checkout URL only if the submission was fully successful
-        window.location.href = CHECKOUT_URL;
-      } else {
-        console.error("Failed to submit form to Google Sheets");
-        setError("There was an error saving your structure preview request. Please try again. Or directly connect to support if the issue persists.");
-      }
     } catch (err) {
       console.error("Submission error:", err);
-      setError("Network error. Please check your connection and try again.");
+      setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -82,7 +80,7 @@ export default function PreviewFormPage() {
             <form className="preview-form" onSubmit={handleSubmit}>
               <div className="preview-form-grid">
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-fullName">Full Name</label>
+                  <label className="preview-form-label" htmlFor="pf-fullName">Full Name<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-fullName"
                     className="preview-form-input"
@@ -98,7 +96,7 @@ export default function PreviewFormPage() {
                 </div>
 
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-designation">Designation</label>
+                  <label className="preview-form-label" htmlFor="pf-designation">Designation<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-designation"
                     className="preview-form-input"
@@ -112,7 +110,7 @@ export default function PreviewFormPage() {
                 </div>
 
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-companyName">Company Name</label>
+                  <label className="preview-form-label" htmlFor="pf-companyName">Company Name<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-companyName"
                     className="preview-form-input"
@@ -126,7 +124,7 @@ export default function PreviewFormPage() {
                 </div>
 
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-workEmail">Work Email ID</label>
+                  <label className="preview-form-label" htmlFor="pf-workEmail">Work Email ID<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-workEmail"
                     className="preview-form-input"
@@ -142,7 +140,7 @@ export default function PreviewFormPage() {
                 </div>
 
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-phone">Phone Number</label>
+                  <label className="preview-form-label" htmlFor="pf-phone">Phone Number<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-phone"
                     className="preview-form-input"
@@ -158,7 +156,7 @@ export default function PreviewFormPage() {
                 </div>
 
                 <div className="preview-form-field">
-                  <label className="preview-form-label" htmlFor="pf-teamSize">Team Size</label>
+                  <label className="preview-form-label" htmlFor="pf-teamSize">Number of Employees to be Trained<span className="required-asterisk">*</span></label>
                   <input
                     id="pf-teamSize"
                     className="preview-form-input"
