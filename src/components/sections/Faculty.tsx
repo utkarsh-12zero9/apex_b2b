@@ -3,6 +3,12 @@
 import { useState } from "react";
 import "./Faculty.css";
 import Reveal from "@/components/ui/Reveal";
+import feature_1 from "../../../public/feature_1.jpg"
+import feature_2 from "../../../public/feature_2.jpg"
+import feature_3 from "../../../public/feature_3.jpg"
+import feature_4 from "../../../public/feature_4.jpg"
+import feature_5 from "../../../public/feature_5.png"
+import FeaturedIn from "./FeaturedIn";
 
 const faculty = [
   {
@@ -31,7 +37,17 @@ const faculty = [
     objectPosition: "center 10%",
     linkedin: "https://www.linkedin.com/in/ian-jason-creado-365a3119b/",
   },
+  {
+    name: "Gurpreet Walia",
+    subheading: "20+ Years Experience | MBA, ISB Hyderabad",
+    credential: `With over 20 years of experience, Gurpreet has worked across corporate development, strategic partnerships, and business growth roles in leading organizations.He has led high-impact initiatives across tech, media, telecom, eCommerce, and EdTech, working closely with CXOs and leadership teams. His experience includes driving large partnerships, managing end-to-end deal execution, and building growth strategies for both Fortune 500 companies and fast-growing startups.At Apex, he brings a practical understanding of how businesses actually grow, focusing on real-world execution, decision-making, and strategic thinking required in modern business roles.`,
+    image: "/Gurpreet.jpg",
+    objectPosition: "center 10%",
+    linkedin: "https://www.linkedin.com/in/gurpreet-walia/",
+  },
 ];
+
+
 
 const FacultyCard = ({ member }: { member: (typeof faculty)[0] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -39,10 +55,10 @@ const FacultyCard = ({ member }: { member: (typeof faculty)[0] }) => {
   return (
     <div className="faculty-card">
       <div className="faculty-card__image-container">
-        <img 
-          src={member.image} 
-          alt={member.name} 
-          className="faculty-card__image" 
+        <img
+          src={member.image}
+          alt={member.name}
+          className="faculty-card__image"
           style={{ objectPosition: member.objectPosition }}
         />
       </div>
@@ -52,8 +68,8 @@ const FacultyCard = ({ member }: { member: (typeof faculty)[0] }) => {
         <div className={`faculty-card__credential-wrapper ${isExpanded ? "expanded" : ""}`}>
           <p className="faculty-card__credential">{member.credential}</p>
         </div>
-        <button 
-          className="faculty-card__see-more" 
+        <button
+          className="faculty-card__see-more"
           onClick={() => setIsExpanded(!isExpanded)}
         >
           {isExpanded ? "See less" : "See more"}
@@ -99,6 +115,8 @@ export default function Faculty() {
           ))}
         </div>
       </div>
+
+      <FeaturedIn />
     </section>
   );
 }
