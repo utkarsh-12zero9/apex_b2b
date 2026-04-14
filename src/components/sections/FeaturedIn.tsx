@@ -48,31 +48,6 @@ export default function FeaturedIn() {
             ))}
           </div>
         </div>
-
-        {/* Proof Block */}
-        <Reveal delay={100}>
-          <div className="trusted__proof">
-            <h3 className="trusted__proof-title">Proven Across Teams</h3>
-            <p className="trusted__proof-text">
-              We have trained <span className="font-bold text-purple-600">300+ SDRs </span>and<span className="font-bold text-purple-600"> BDRs</span> across different companies.
-              <br />
-              Our training is based on real sales workflows used by active teams.
-            </p>
-          </div>
-          <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-            <a
-              href="https://casestudy.apexschoolofbusiness.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="trusted__casestudy-btn"
-            >
-              Explore Case Study
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
