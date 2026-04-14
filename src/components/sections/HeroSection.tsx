@@ -23,13 +23,13 @@ export default function HeroSection() {
           <Reveal delay={0}>
             <div className="hero__badge">
               <span className="hero__badge-dot" />
-              The Program Modern Revenue Teams Are Built On
+              The Training Program Modern Revenue Teams Are Built On
             </div>
           </Reveal>
 
           <Reveal delay={100}>
             <h1 className="hero__headline">
-              AI Powered Sales Systems for {" "}
+              AI Powered Sales System Training for {" "}
               <span className="gradient-text">Modern B2B Teams</span>
             </h1>
           </Reveal>

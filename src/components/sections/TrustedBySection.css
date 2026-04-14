@@ -134,6 +134,29 @@
   background: rgba(124, 58, 237, 0.04);
 }
 
+/* ── Case Study Button ── */
+.trusted__casestudy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.trusted__casestudy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+  background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+}
+
 @media (max-width: 768px) {
   .trusted-section {
     padding: 16px 0 24px;

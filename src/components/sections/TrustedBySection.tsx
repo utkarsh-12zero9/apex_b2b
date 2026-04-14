@@ -8,7 +8,7 @@ const companies = [
   { name: "Expedium", logo: "/Expedium.jpg", url: "https://www.expedium.net/" },
   { name: "Testriq", logo: "/testriq.jpg", url: "https://www.testriq.com/" },
   { name: "Daalchini", logo: "/daalchini.jpg", url: "https://www.daalchini.co.in/" },
-  { name: "Verda", logo: "/verda.jpg", url: "https://verdahealthcare.com/" },
+  { name: "Verda", logo: "/verda.png", url: "https://www.verda.ai/" },
   { name: "Zetwerk", logo: "/zetwork.jpg", url: "https://www.zetwerk.com/" },
   { name: "Eureka24x7", logo: "/eureka.png", url: "https://www.eureka24x7.com/" },
 ];
@@ -59,6 +59,19 @@ export default function TrustedBySection() {
               <br />
               Our training is based on real sales workflows used by active teams.
             </p>
+          </div>
+          <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+            <a
+              href="https://casestudy.apexschoolofbusiness.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="trusted__casestudy-btn"
+            >
+              Case Study
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
           </div>
         </Reveal>
       </div>
